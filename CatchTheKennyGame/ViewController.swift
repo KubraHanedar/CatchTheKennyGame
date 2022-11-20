@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     var counter = 0
     var kennyArray = [UIImageView]()
     var hideTimer = Timer()
+    var highScore = 0
     
     //Views
     @IBOutlet weak var timeLabel: UILabel!
@@ -35,6 +36,21 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         scoreLabel.text = "Score: \(score)"
+        
+        //HighScore Check
+            
+            let storedHighScore = UserDefaults.standard.object(forKey: "highscore")
+            
+            if storedHighScore == nil {
+                highScore = 0
+                highscoreLabel.text = "Highscore: \(highScore)"
+            }
+            
+            if let newScore = storedHighScore as? Int {
+                highScore = newScore
+                highscoreLabel.text = "Highscore: \(highScore)"
+            }
+        
         
         //Images
         kenny1.isUserInteractionEnabled = true
@@ -117,6 +133,17 @@ class ViewController: UIViewController {
                 kenny.isHidden = true
             }
             
+            
+            
+            //HighScore
+            
+            if self.score > self.highScore {
+                self.highScore = self.score
+                highscoreLabel.text = "Highscore: \(self.highScore)"
+                UserDefaults.standard.set(self.highScore, forKey: "highscore")
+                
+            }
+            
             //Alert
             let alert = UIAlertController(title: "Time's Up", message: "Do you want to play again?", preferredStyle: UIAlertController.Style.alert)
             let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.cancel, handler:  nil)
@@ -134,10 +161,6 @@ class ViewController: UIViewController {
                 self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.countDown), userInfo: nil, repeats: true)
                 self.hideTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.hideKenny), userInfo: nil, repeats: true)
                 
-                
-                
-                
-    
                 
                 
             }
