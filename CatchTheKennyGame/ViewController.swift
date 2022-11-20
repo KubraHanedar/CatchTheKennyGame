@@ -125,7 +125,19 @@ class ViewController: UIViewController {
                 (UIApplication) in
                 
                 //Replay Function
+                self.score = 0
+                self.scoreLabel.text = "Score: \(self.score)"
+                self.counter = 10
+                self.timeLabel.text = String(self.counter)
                 
+                
+                self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.countDown), userInfo: nil, repeats: true)
+                self.hideTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.hideKenny), userInfo: nil, repeats: true)
+                
+                
+                
+                
+    
                 
                 
             }
