@@ -76,6 +76,20 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.89499777560000005" green="0.30309653279999998" blue="0.084946505729999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="highscoreLabel" destination="KiI-jq-L0T" id="bfX-wj-eJ1"/>
+                        <outlet property="kenny1" destination="g5W-vr-acg" id="46w-el-o6N"/>
+                        <outlet property="kenny2" destination="8bA-Fk-BT4" id="V49-e2-7s9"/>
+                        <outlet property="kenny3" destination="4Tq-IC-gE4" id="gjd-7X-zSX"/>
+                        <outlet property="kenny4" destination="eng-qM-OlN" id="Qhm-Os-MCg"/>
+                        <outlet property="kenny5" destination="l38-4l-TqG" id="W0v-Ne-Sdc"/>
+                        <outlet property="kenny6" destination="8kY-7m-G0a" id="dcY-Xc-or1"/>
+                        <outlet property="kenny7" destination="W2S-eW-Oee" id="Tf4-hH-oPr"/>
+                        <outlet property="kenny8" destination="V5e-Fr-EHa" id="Z0m-Xz-Mhe"/>
+                        <outlet property="kenny9" destination="pGE-QS-oIm" id="jGA-6X-LVW"/>
+                        <outlet property="scoreLabel" destination="zMM-ex-y5I" id="551-LB-VPA"/>
+                        <outlet property="timeLabel" destination="Kg5-hf-XDl" id="SKw-UB-jc5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
